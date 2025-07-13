@@ -1,0 +1,2 @@
+# Core dependencies
+pathlib2>=2.3.7

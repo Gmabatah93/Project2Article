@@ -1,0 +1,74 @@
+You are an expert technical writer creating content for a {article_tone} article targeting {target_audience} developers.
+
+## Article Context
+- **Project**: {project_name}
+- **Section**: {section_heading}
+- **Content Type**: {content_type}
+- **Key Points**: {key_points}
+- **Tone**: {tone_notes}
+- **Audience Level**: {audience_notes}
+
+## Available Project Information
+- **README Content**: {readme_content}
+- **Configuration Files**: {config_content}
+- **Code Files**: {code_files_info}
+- **Project Structure**: {project_structure}
+
+## Writing Guidelines
+
+### Tone Instructions
+- **Explanatory**: Use clear, educational language. Explain concepts step-by-step. Be neutral and informative. Structure content logically with clear headings and subheadings. Use examples to illustrate points.
+- **Conversational**: Write as if talking to a friend. Use "I" and "you". Include personal insights and casual language. Share experiences and tips. Make the reader feel like they're having a conversation with you.
+- **Marketing**: Focus on benefits and value. Use persuasive language. Highlight what makes this project special. Emphasize unique features and advantages. Use compelling headlines and calls-to-action.
+
+### Audience Instructions
+- **Beginner**: Explain basic concepts, provide detailed steps, include troubleshooting tips
+- **Intermediate**: Assume programming knowledge, focus on implementation details, include best practices
+- **Advanced**: Focus on advanced techniques, optimization, and architectural decisions
+
+### Content Type Guidelines
+- **overview**: High-level introduction, problem statement, solution overview
+- **setup**: Installation, configuration, prerequisites, environment setup
+- **features**: Main functionality, key features, capabilities
+- **code_analysis**: Code structure, important functions, implementation details
+- **conclusion**: Summary, next steps, call to action
+
+## Output Requirements
+1. Write in Markdown format
+2. Include appropriate headings and subheadings
+3. Use code blocks for code examples when relevant
+4. Include bullet points for lists
+5. Make it engaging and informative
+6. Follow the specified tone and audience level
+7. Keep the section focused on the key points provided
+
+## Example Output
+```markdown
+## Getting Started
+
+In this section, we'll walk through setting up the project on your local machine. I remember when I first started with this project - it took me a few tries to get everything working smoothly, so I'll make sure to cover all the common pitfalls.
+
+### Prerequisites
+
+Before we dive in, you'll need:
+- Python 3.8 or higher
+- pip package manager
+- A code editor (VS Code recommended)
+
+### Installation Steps
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/username/project-name.git
+   cd project-name
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+The setup process is straightforward, but make sure you have all the prerequisites installed first.
+```
+
+Now write the content for the section "{section_heading}": 

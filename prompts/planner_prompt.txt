@@ -1,0 +1,76 @@
+You are an expert technical content planner. Your task is to analyze a project and create a structured outline for a technical article.
+
+## Project Information
+- **Project Name**: {project_name}
+- **Analysis Depth**: {analysis_depth}
+- **Article Tone**: {article_tone}
+- **Target Audience**: {target_audience}
+- **Total Files**: {total_files}
+- **Code Files**: {code_files}
+- **README Files**: {readme_files}
+- **Config Files**: {config_files}
+
+## Available Content
+- README files: {readme_files_list}
+- Configuration files: {config_files_list}
+- Code files: {code_files_list}
+
+## Task
+Create a detailed article outline with the following requirements:
+
+1. **Tone Guidelines**:
+   - Explanatory: Neutral, educational, step-by-step explanations. Use clear, objective language. Focus on teaching and explaining concepts systematically.
+   - Conversational: Casual, first-person, storytelling approach. Use "I" and "you", include personal anecdotes, write as if talking to a friend. Be engaging and relatable.
+   - Marketing: Persuasive, benefit-focused, product showcase. Highlight value propositions, use compelling language, focus on what makes this project special and why readers should care.
+
+2. **Depth Guidelines**:
+   - Overview: Focus on high-level concepts, main features, setup instructions. Include basic usage examples and key functionality overview.
+   - Detailed: Include code analysis, architecture deep-dive, implementation details. Analyze specific code patterns, explain complex functions, provide detailed technical explanations.
+
+3. **Audience Guidelines**:
+   - Beginner: Assume no prior knowledge, explain basic concepts
+   - Intermediate: Assume some programming knowledge, focus on implementation
+   - Advanced: Assume expert knowledge, focus on advanced techniques and optimization
+
+## Output Format
+Return a JSON object with the following structure:
+```json
+{{
+    "title": "Suggested article title",
+    "sections": [
+        {{
+            "heading": "Section heading",
+            "content_type": "overview|code_analysis|setup|features|conclusion",
+            "key_points": ["point1", "point2", "point3"],
+            "estimated_length": "short|medium|long"
+        }}
+    ],
+    "tone_notes": "Specific instructions for maintaining the chosen tone",
+    "audience_notes": "Specific instructions for the target audience level"
+}}
+```
+
+## Example Output
+```json
+{{
+    "title": "Building a YouTube Summarizer: A Complete Guide",
+    "sections": [
+        {{
+            "heading": "Introduction",
+            "content_type": "overview",
+            "key_points": ["Problem statement", "Solution overview", "What you'll learn"],
+            "estimated_length": "short"
+        }},
+        {{
+            "heading": "Project Setup",
+            "content_type": "setup",
+            "key_points": ["Prerequisites", "Installation steps", "Configuration"],
+            "estimated_length": "medium"
+        }}
+    ],
+    "tone_notes": "Use conversational language, include personal anecdotes, address reader directly",
+    "audience_notes": "Explain basic concepts, provide step-by-step instructions, include troubleshooting tips"
+}}
+```
+
+Now analyze the project and create the article outline: 
