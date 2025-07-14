@@ -308,13 +308,6 @@ def render_main_pane():
             - Publish to your blog
             """)
         
-        st.markdown("---")
-        st.markdown("### 📈 Success Metrics")
-        st.markdown("""
-        - **≥80%** of articles rated 4/5 or higher
-        - **≤60 seconds** generation time for projects ≤5MB
-        - **≥30%** returning user rate after 30 days
-        """)
 
 
 def process_project_upload(config: Dict):

@@ -320,17 +320,16 @@ class ContentGeneratorNode:
             sections_content = []
             plan = state["article_plan"]
             
+            # Loop through each section in the plan
             for i, section in enumerate(plan["sections"]):
                 logger.info(f"Generating content for section {i+1}/{len(plan['sections'])}: {section['heading']}")
                 
                 try:
-                    # Format the prompt for this section
+                    # Generate content for this section
                     prompt = self.format_section_prompt(section, state)
-                    
-                    # Get response from LLM
                     response = self.llm_client.generate_content(prompt)
                     
-                    # Add section content
+                    # Format the response
                     section_content = f"## {section['heading']}\n\n{response.text}\n\n"
                     sections_content.append(section_content)
                     
@@ -443,3 +442,4 @@ def create_workflow_graph(llm_client) -> StateGraph:
     
     # Compile the graph
     return workflow.compile(checkpointer=MemorySaver()) 
+
