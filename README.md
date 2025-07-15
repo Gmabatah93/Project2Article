@@ -2,35 +2,77 @@
 
 ![System Architecture](image/high_level_diagram.png)
 
-A Streamlit application that transforms code projects into engaging technical articles using AI-powered analysis.
+## 🎯 Why This Project Exists
 
-## 🎯 Overview
+**Problem**: Developers spend countless hours writing technical articles to showcase their projects, but this process is time-consuming and often repetitive. Many great projects go undocumented because developers lack the time or writing skills to create compelling technical content.
 
-This application allows developers to upload their project archives and automatically generate well-structured technical articles. Perfect for:
-- **Indie Developers** who want to showcase their work
-- **Bootcamp Graduates** building portfolio pieces  
-- **Content Creators** generating tutorials at scale
+**Solution**: An AI-powered system that automatically transforms code projects into engaging technical articles, making project documentation effortless and consistent.
 
-## ✨ Features
+## 🚀 How It Works
 
-### ✅ Complete Features (Milestones 1-4)
-- ✅ File upload support (ZIP, TAR.GZ, max 20MB)
-- ✅ Project analysis with file tree generation
-- ✅ Configurable analysis depth (Overview/Detailed)
-- ✅ Article tone selection (Explanatory/Conversational/Marketing)
-- ✅ **Real LLM Integration**: OpenAI GPT-4, Anthropic Claude, Google Gemini
-- ✅ **API Key Management**: Secure input fields with environment variable support
-- ✅ **LangGraph Workflow**: Complete article generation pipeline
-- ✅ **Graceful Fallback**: Mock clients for testing without API keys
-- ✅ **Production Ready**: Error handling, logging, and comprehensive testing
-- ✅ Modern, responsive UI with real-time feedback
+The Project-to-Article Generator uses a sophisticated AI workflow to analyze your codebase and generate comprehensive technical articles. Here's the high-level process:
 
-### 🚀 Ready for Production
-- 🤖 **Real AI-powered article generation**
-- 📊 **Multiple LLM provider support**
-- 🎨 **Automatic code snippet formatting**
-- 📈 **Performance metrics and logging**
-- 🛡️ **Security and privacy protection**
+### 1. **Project Analysis** 
+- Uploads and extracts your project archive (ZIP/TAR.GZ)
+- Analyzes file structure, README files, and source code
+- Identifies key components, dependencies, and architecture patterns
+
+### 2. **Content Planning**
+- Uses AI to understand your project's purpose and technical stack
+- Generates a structured article outline based on your project's complexity
+- Adapts content strategy to your chosen tone and target audience
+
+### 3. **Article Generation**
+- Leverages multiple LLM providers (OpenAI GPT-4, Anthropic Claude, Google Gemini)
+- Generates section-by-section content with technical accuracy
+- Incorporates code snippets, explanations, and best practices
+
+### 4. **Final Assembly**
+- Combines all sections into a cohesive markdown article
+- Adds metadata, formatting, and professional styling
+- Provides ready-to-publish content for blogs, documentation, or portfolios
+
+## 🏗️ Technical Architecture
+
+The system is built with modern AI/ML practices and follows a modular, scalable architecture:
+
+### **Frontend Layer**
+- **Streamlit UI**: Clean, intuitive interface for project upload and configuration
+- **Real-time Feedback**: Progress indicators and status updates during processing
+- **Responsive Design**: Works seamlessly across different devices and screen sizes
+
+### **Processing Pipeline**
+- **Project Parser**: Extracts and analyzes project structure using intelligent file categorization
+- **LangGraph Workflow**: Orchestrates the entire article generation process with state management
+- **Multi-Provider LLM Integration**: Supports multiple AI providers with automatic fallback
+
+### **AI/ML Components**
+- **Content Planning Node**: Uses AI to create article structure and outline
+- **Section Generation Node**: Generates individual article sections with context awareness
+- **Post-Processing Node**: Assembles and formats the final article with metadata
+
+### **Key Technical Features**
+- **Configurable Analysis Depth**: Overview (README-focused) or Detailed (full codebase analysis)
+- **Tone Customization**: Explanatory, Conversational, or Marketing styles
+- **API Key Management**: Secure handling of multiple LLM provider credentials
+- **Error Handling**: Graceful degradation with mock clients for testing
+
+## 🎯 Use Cases
+
+### **For Developers**
+- **Portfolio Enhancement**: Quickly create technical articles for your GitHub projects
+- **Documentation**: Generate comprehensive project documentation automatically
+- **Knowledge Sharing**: Share your technical insights without the writing overhead
+
+### **For Teams**
+- **Onboarding**: Create technical articles for new team members
+- **Project Handoffs**: Generate documentation for project transfers
+- **Client Deliverables**: Produce professional technical reports for clients
+
+### **For Content Creators**
+- **Technical Blogging**: Scale your content creation with AI assistance
+- **Tutorial Generation**: Create step-by-step guides from existing projects
+- **Educational Content**: Transform code projects into learning materials
 
 ## 🚀 Quick Start
 
@@ -72,80 +114,48 @@ This application allows developers to upload their project archives and automati
 5. **Open your browser**
    Navigate to `http://localhost:8501`
 
-## 📖 Usage
+## 📖 Usage Guide
 
 ### Step 1: Prepare Your Project
-- Zip your project folder
-- Ensure it's under 20MB
-- Include a README file for better analysis
+- Zip your project folder (max 20MB)
+- Ensure it includes a README file for better analysis
+- Clean up any sensitive information before uploading
 
-### Step 2: Upload and Configure
-- Upload your project archive
-- Choose analysis depth:
-  - **Overview**: README & top-level files only
-  - **Detailed**: Full source code analysis
-- Select article tone and LLM provider
-- Configure meta settings
+### Step 2: Configure Generation Settings
+- **Analysis Depth**: Choose between Overview (README-focused) or Detailed (full codebase)
+- **Article Tone**: Select from Explanatory, Conversational, or Marketing styles
+- **LLM Provider**: Pick your preferred AI model (OpenAI GPT-4, Anthropic Claude, Google Gemini)
+- **Target Audience**: Specify the technical level (Beginner, Intermediate, Advanced)
 
-### Step 3: Generate Article
-- Click "Generate Article"
-- Wait for processing (≤60 seconds)
-- Review and download your article
+### Step 3: Generate and Review
+- Click "Generate Article" and wait for processing (≤60 seconds)
+- Review the generated content for accuracy and completeness
+- Download as Markdown or copy to clipboard for immediate use
 
-## 🏗️ Architecture
+## 🧪 Testing
 
-```
-project_to_article_app/
-├── app.py               # Streamlit UI
-├── graph/               # LangGraph DAG
-│   ├── __init__.py
-│   └── nodes.py         # Workflow nodes (M2+)
-├── services/
-│   ├── __init__.py
-│   ├── llm_factory.py   # LLM provider abstraction (M4+)
-│   └── parser.py        # File extraction & analysis
-├── prompts/             # Prompt templates (M2+)
-│   ├── planner_prompt.txt
-│   └── section_prompt.txt
-├── requirements.txt
-└── README.md
-```
-
-## 🎯 Success Metrics
-
-- **≥80%** of generated articles rated 4/5 or higher by users
-- **≤60 seconds** Time-to-Article for projects ≤5MB
-- **≥30%** returning user rate after 30 days
-
-## 🔧 Development
-
-### Project Structure
-- **M0**: Project kickoff & tech spike ✅
-- **M1**: File upload & parsing working ✅
-- **M2**: LangGraph article pipeline (Overview) ✅
-- **M3**: Depth = Detailed + tone control ✅
-- **M4**: Real LLM integration & API management ✅
-- **M5**: Production ready with comprehensive testing ✅
-- **M6**: Ready for deployment and scaling 🚀
-
-### Running Tests
+### Test Real LLM Integration
 ```bash
-pytest tests/
+python test/test_real_llm.py
 ```
 
-### Code Formatting
+### Test Complete Workflow
 ```bash
-black .
-flake8 .
+python test/debug_workflow.py
+```
+
+### Visualize Workflow
+```bash
+python test/visualize_workflow.py
 ```
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+We welcome contributions! Please see our contributing guidelines for details on:
+- Code style and standards
+- Testing requirements
+- Pull request process
+- Issue reporting
 
 ## 📄 License
 
@@ -153,29 +163,12 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 🆘 Support
 
-- **Issues**: Create a GitHub issue
-- **Documentation**: Check the PRD.md file
-- **Questions**: Open a discussion
-
-## 🧪 Testing
-
-### Test Real LLM Integration
-```bash
-python test_real_llm.py
-```
-
-### Test Complete Workflow
-```bash
-python debug_workflow.py
-```
-
-### Visualize Workflow
-```bash
-python visualize_workflow.py
-```
+- **Issues**: Create a GitHub issue for bugs or feature requests
+- **Documentation**: Check the PRD.md file for detailed specifications
+- **Questions**: Open a discussion for general questions
 
 ---
 
 **🎉 Project Status: Production Ready!**
 
-All milestones completed. The Project-to-Article Generator is now fully functional with real LLM integration, comprehensive testing, and production-ready features. 
+The Project-to-Article Generator is fully functional with real LLM integration, comprehensive testing, and production-ready features. Transform your code projects into compelling technical articles with just a few clicks! 
