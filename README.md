@@ -1,5 +1,7 @@
 # Project-to-Article Generator
 
+![System Architecture](image/high_level_diagram.png)
+
 A Streamlit application that transforms code projects into engaging technical articles using AI-powered analysis.
 
 ## 🎯 Overview
