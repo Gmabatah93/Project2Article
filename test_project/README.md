@@ -26,4 +26,4 @@ python main.py
 - `main.py`: Main application entry point
 - `config.py`: Configuration management
 - `utils.py`: Utility functions
-- `requirements.txt`: Python dependencies
+- `requirements.txt`: Python dependencies 
